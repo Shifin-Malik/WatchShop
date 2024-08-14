@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -ms-overflow-style: none; /* Internet Explorer 10+ hide scrollbar  */
+  scrollbar-width: none; /* Firefox hide scrollbar  */
+  /* border: 1px solid red !important; */
+}
+
+* :focus-visible {
+  outline: red solid 3px;
+}
+
+*::-webkit-scrollbar {
+  display: none; /* Safari and Chrome  hide scrollbar */
+}
+
+html,
+body {
+  @apply bg-gray-100;
+}
+
+.page {
+  position: fixed;
+}
+
+.page-enter {
+  opacity: 0;
+  transform: scale(1.1);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
+}
+
+.page-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.page-exit-active {
+  opacity: 0;
+  transform: scale(0.9);
+  transition-duration: 300s;
+  transition:
+    opacity 0.3s,
+    transform 0.3s;
+}
