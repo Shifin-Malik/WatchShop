@@ -12,6 +12,7 @@ import { store } from "./states/storage.ts";
 import "./index.css";
 import { theme } from "./theme.ts";
 
+
 const queryClient = new QueryClient();
 
 const persister = createSyncStoragePersister({
@@ -20,7 +21,7 @@ const persister = createSyncStoragePersister({
 
 createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <BrowserRouter basename="/WatchShop">
+    <BrowserRouter>
       <PersistQueryClientProvider
         client={queryClient}
         persistOptions={{ persister }}
