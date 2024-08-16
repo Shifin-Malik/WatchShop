@@ -1,7 +1,7 @@
 import { FaShoppingCart } from "react-icons/fa";
 import { FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { Input } from "@material-tailwind/react";
+
 function SearchPage() {
   return (
     <div className="props props-invert fixed top-0 w-full h-auto">
@@ -14,7 +14,7 @@ function SearchPage() {
 
       </div>
       <div className="w-72 ml-10 ">
-      <Input className="bg-zink-200" placeholder="Search"/>
+     
     </div>
 
     </div>
