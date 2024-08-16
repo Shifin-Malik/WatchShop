@@ -1,9 +1,8 @@
-
-  import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "./pages/home";
-import SearchPage from './pages/SearchPage';
-import Profile from './pages/ProfilePage'
-import Layout from './layout/layout'
+import SearchPage from "./pages/SearchPage";
+import Profile from "./pages/ProfilePage";
+import Layout from "./layout/layout";
 import "./App.css";
 import WatchList from "./pages/WatchList";
 import NotFound from "./pages/NotFound";
@@ -16,35 +15,16 @@ function App() {
   return (
     <Routes>
       <Route element={<Layout />} path="/">
-      
         <Route
           index
-          element={isLoggedIn ? <Home/> : <Navigate to="/getting-started" /> }
+          element={isLoggedIn ? <Home /> : <Navigate to="/getting-started" />}
         />
-       
-         <Route
-          path="search"
-          element={
-            isLoggedIn ? <SearchPage/> : <Navigate to="/getting-started" />
-          }
-        />
-           <Route
-          path="watchlist"
-          element={
-            isLoggedIn ? <WatchList /> : <Navigate to="/getting-started" />
-          }
-        />
-        <Route
-          path="profile"
-          element={
-            isLoggedIn ? <Profile /> : <Navigate to="/getting-started" />
-          }
-        />
-         
-        <Route
-          path="getting-started"
-          element={isLoggedIn ? <GettingStarted /> : <Navigate to="/getting-started" />}
-        />
+
+        <Route path="search" element={<SearchPage />} />
+        <Route path="watchlist" element={<WatchList />} />
+        <Route path="profile" element={<Profile />} />
+
+        <Route path="getting-started" element={<GettingStarted />} />
         <Route
           path="login"
           element={isLoggedIn ? <Navigate to="/" /> : <Login />}

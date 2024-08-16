@@ -21,7 +21,7 @@ const persister = createSyncStoragePersister({
 
 createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/WatchShop/">
       <PersistQueryClientProvider
         client={queryClient}
         persistOptions={{ persister }}
@@ -33,6 +33,5 @@ createRoot(document.getElementById("root")!).render(
         </Provider>
       </PersistQueryClientProvider>
     </BrowserRouter>
-  </React.StrictMode>,
+  </React.StrictMode>
 );
-
