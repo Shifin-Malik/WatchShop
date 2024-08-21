@@ -87,7 +87,7 @@ export function Card() {
               <img
                 src={item.imgSrc}
                 alt={item.title}
-                className="h-full w-full object-cover mt-0 "
+                className="h-full w-full object-cover mt-0 bg-primary"
               />
             </CardHeader>
             <CardBody
@@ -99,7 +99,7 @@ export function Card() {
 >
               <div className="flex flex-col items-center mt-[-40px] justify-center ">
               <Typography
-  color="gray"
+  color="black"
   className="font-medium text-secondary"
   placeholder={undefined}
   onPointerEnterCapture={() => {}}

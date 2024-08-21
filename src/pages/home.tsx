@@ -1,20 +1,21 @@
-
-import { Card } from "../components/home/Cards"
-import Header from "../components/home/Header"
-import ItemsList from "../components/home/ItemsList"
-
+import Header from "../components/Home/Header"
+import Card from "../components/Home/Card"
+import ItemsList from "../components/Home/ItemsList"
 
 
-function home() {
+
+export default function Home()  {
   return (
     <div className="fixed h-screen w-full flex flex-col">
     <Header />
   <ItemsList />
+
   <Card />
+  
 
   
     </div>
   )
 }
 
-export default home
+
