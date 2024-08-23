@@ -29,7 +29,7 @@ function SearchHeader() {
         <Input
           type="text"
           placeholder="Search"
-          className="!h-14 pl-12 bg-white rounded-2xl border border-gray-300 text-gray-900 shadow-lg ring-4 ring-transparent placeholder:text-gray-500 !focus:border-gray-900 !focus:ring-gray-900/10" onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} crossOrigin={undefined} success={undefined}          />
+          className="!h-14 pl-12  bg-white rounded-2xl border border-gray-300 text-gray-900 shadow-lg ring-4 ring-transparent placeholder:text-gray-500 !focus:border-gray-900 !focus:ring-gray-900/10" onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} crossOrigin={undefined} success={undefined}          />
         <IoSearchOutline className="absolute top-4 left-4 text-gray-500 w-6 h-6" />
       </div>
       <div className="bg-white p-2 rounded-lg flex items-center justify-center mt-1 border border-gray-300 shadow-lg ring-4 ring-transparent">
