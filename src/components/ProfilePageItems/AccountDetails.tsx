@@ -71,6 +71,7 @@ function AccountDetails() {
             placeholder="Upgrade to PRO"
           />
 
+
           <div className="md:w-[1330px] w-80 mt-7 flex flex-col gap-7 ">
             {inputData.map(({ icon: Icon, label }, i) => (
               <div key={i} className="relative flex-1">
@@ -103,6 +104,7 @@ function AccountDetails() {
               <AiOutlineLogout className="absolute top-4 left-4 text-gray-500 w-6 h-6" />
             </div>
           </div>
+
         </div>
       </div>
     </div>
