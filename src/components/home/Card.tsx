@@ -1,5 +1,6 @@
 
 import { Card as MaterialCard, CardHeader, CardBody, CardFooter, Button, Typography } from "@material-tailwind/react";
+import {FaHeart} from "react-icons/fa";
 import Watch2 from '../../../public/images/watch2.png'
 // Sample data array
 const cardData = [
@@ -70,16 +71,16 @@ export function Card() {
        <MaterialCard
        key={index}
        shadow={false}
-       className="w-52 flex-shrink-0 bg-primary h-auto rounded-md"
+       className="w-48  flex-shrink-0 bg-primary h-64 rounded-md"
        placeholder={undefined}
        onPointerEnterCapture={undefined}
        onPointerLeaveCapture={undefined}
      >
-        
+        <FaHeart className="absolute right-0 mt-1 w-10 h-4 "/>
         <CardHeader
   shadow={false}
   floated={false}
-  className="h-48"
+  className="h-32 mt-6"
   placeholder={undefined}
   onPointerEnterCapture={undefined}
   onPointerLeaveCapture={undefined}
@@ -87,20 +88,20 @@ export function Card() {
               <img
                 src={item.imgSrc}
                 alt={item.title}
-                className="h-full w-full object-cover mt-0 bg-primary"
+                className="h-full w-full object-cover mt-0 mb-0  bg-primary"
               />
             </CardHeader>
             <CardBody
-  className="h-auto flex flex-col"
+  className="p-0 h-auto flex flex-col"
   placeholder={undefined}
   onPointerEnterCapture={undefined}
   onPointerLeaveCapture={undefined}
   onTransitionEndCapture={undefined}
 >
-              <div className="flex flex-col items-center mt-[-40px] justify-center ">
+              <div className="flex flex-col items-center   justify-center ">
               <Typography
   color="black"
-  className="font-medium text-secondary"
+  className="font-medium !text-black mt-0 mb-0"
   placeholder={undefined}
   onPointerEnterCapture={() => {}}
   onPointerLeaveCapture={() => {}}
@@ -120,7 +121,7 @@ export function Card() {
           
             </CardBody>
             <CardFooter
-  className="pt-0 flex justify-center relative bottom-4"
+  className="p-0 pt-0 flex justify-center relative bottom-4"
   placeholder={undefined}
   onPointerEnterCapture={() => {}}
   onPointerLeaveCapture={() => {}}

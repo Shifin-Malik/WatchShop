@@ -65,12 +65,7 @@ function AccountDetails() {
         <div className="flex flex-col bg-primary h-screen w-full items-center mt-[-3rem]">
           <h2 className="font-bold   text-black mb-0">Shifin malik</h2>
           <p className="text-gray-700 mb-2">Shifinmalik@gmail.com</p>
-          <input
-            className=" bg-yellow-500 text-center rounded-3xl h-10  "
-            type="text"
-            placeholder="Upgrade to PRO"
-          />
-
+        <button   className=" bg-yellow-400 w-44 text-center rounded-3xl h-10" >Upgrade to PRO</button>
 
           <div className="md:w-[1330px] w-80 mt-7 flex flex-col gap-7 ">
             {inputData.map(({ icon: Icon, label }, i) => (
