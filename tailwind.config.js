@@ -26,7 +26,7 @@ export default withMT({
       primary: "#EEEEEE",
       secondary: "#000000",
       accent: "#FE0000",
-      neutral: "#ffffff",
+      neutral: "#fdfb12",
       "base-100": "#0a0a0a",
       info: "#38bdf8",
       success: "#00ff00",

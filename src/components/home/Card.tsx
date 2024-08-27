@@ -2,6 +2,9 @@ import { Card as MaterialCard, CardHeader, CardBody, CardFooter, Button, Typogra
 import { FaHeart } from "react-icons/fa";
 import Watch2 from '../../../public/images/watch2.png';
 
+import { toast,  } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 // Sample data array
 const cardData = [
   { imgSrc: Watch2, title: "Rolex", price: "$100.00" },
@@ -44,7 +47,13 @@ export function Card() {
               </Typography>
             </CardBody>
             <CardFooter className="p-0 pt-0 flex justify-center relative bottom-4" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-              <Button className="w-40 h-12 bg-secondary shadow-none hover:scale-105 focus:scale-105 active:scale-100"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+              <Button className="w-40 h-12 bg-secondary shadow-none hover:scale-105 focus:scale-105 active:scale-100"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined} 
+              
+              onClick={() => {
+                
+                toast.success("Product successfully added to cart")
+              }}
+              >
                 Add to Cart
               </Button>
             </CardFooter>

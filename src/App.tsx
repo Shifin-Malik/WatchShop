@@ -8,12 +8,14 @@ import WatchList from "./pages/WatchList";
 import NotFound from "./pages/NotFound";
 import GettingStarted from "./pages/GettingStarted";
 import Login from "./pages/Login";
+import Cart from "./pages/Cart";
 
 function App() {
   const isLoggedIn = true;
 
   return (
     <Routes>
+       
       <Route element={<Layout />} path="/">
         <Route
           index
@@ -23,6 +25,7 @@ function App() {
         <Route path="search" element={<SearchPage />} />
         <Route path="watchlist" element={<WatchList />} />
         <Route path="profile" element={<Profile />} />
+       
 
         <Route path="getting-started" element={<GettingStarted />} />
         <Route
@@ -32,6 +35,7 @@ function App() {
         <Route path="*" element={<Navigate to="/404" replace />} />
         <Route path="/404" element={<NotFound />} />
       </Route>
+      <Route path="cart" element={<Cart />} />
     </Routes>
   );
 }
