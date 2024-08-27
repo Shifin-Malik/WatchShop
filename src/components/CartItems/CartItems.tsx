@@ -28,7 +28,7 @@ function CartItems() {
 
       {/* Cart Items */}
       <div className="flex-1 overflow-y-auto mt-16 mb-20">
-        <div className="flex flex-col w-[54vh] max-w-md mx-auto mt-3 space-y-2">
+        <div className="flex flex-col w-[44vh] max-w-md mx-auto mt-3 space-y-2">
           {cardData.map((item, index) => (
             <div
               key={index}
