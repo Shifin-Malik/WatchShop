@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { FaArrowLeft } from 'react-icons/fa';
 import { MdDelete } from 'react-icons/md';
 import { Link } from 'react-router-dom';
@@ -57,8 +57,7 @@ function CartItems() {
               <div className="flex flex-col items-center">
                 <Button
                   className="w-6 h-6 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center"
-                  onClick={() => handleIncreaseQuantity(item)}
-                >
+                  onClick={() => handleIncreaseQuantity(item)}  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}                >
                   +
                 </Button>
                 <span className="my-2 text-sm font-medium text-gray-800">
@@ -66,15 +65,13 @@ function CartItems() {
                 </span>
                 <Button
                   className="w-6 h-6 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center"
-                  onClick={() => handleDecreaseQuantity(item)}
-                >
+                  onClick={() => handleDecreaseQuantity(item)}  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}                >
                   -
                 </Button>
               </div>
               <Button
                 className="text-secondary hover:bg-red-100 rounded-full p-1"
-                onClick={() => handleRemoveFromCart(item)}
-              >
+                onClick={() => handleRemoveFromCart(item)}  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}              >
                 <MdDelete className="w-5 h-5" />
               </Button>
             </div>
@@ -86,8 +83,7 @@ function CartItems() {
       <div className="fixed bottom-0 left-0 right-0 z-10 bg-secondary shadow-md w-full h-[13vh] flex items-center justify-between px-8 rounded-t-3xl">
         <div className="text-3xl font-bold mt-2 text-white">${totalAmount.toFixed(2)}</div>
         <Button
-          className="text-white bg-indigo-600 h-12 font-bold w-40 flex items-center justify-center rounded-full shadow-lg hover:bg-indigo-500 transition"
-        >
+          className="text-white bg-indigo-600 h-12 font-bold w-40 flex items-center justify-center rounded-full shadow-lg hover:bg-indigo-500 transition"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}        >
           Check Out
         </Button>
       </div>
