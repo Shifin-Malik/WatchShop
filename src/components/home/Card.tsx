@@ -19,6 +19,15 @@ interface CardItem {
   imgSrc: string;
   title: string;
   price: string;
+  quantity?: number; // Optional, default to 1 in handleAddToCart
+}
+
+// Define the type for cart items
+interface CartItem {
+  imgSrc: string;
+  title: string;
+  price: string;
+  quantity: number; // Required property
 }
 
 // Sample data array
@@ -33,7 +42,13 @@ export function Card() {
   const { addToCart } = useCart(); // Destructure addToCart from useCart
 
   const handleAddToCart = (item: CardItem) => {
-    addToCart(item); // Call addToCart with the item details
+    const cartItem: CartItem = {
+      imgSrc: item.imgSrc,
+      title: item.title,
+      price: item.price,
+      quantity: item.quantity ?? 1, // Default quantity if not provided
+    };
+    addToCart(cartItem); // Pass cartItem with quantity
     toast.success("Product successfully added to cart");
   };
 
@@ -57,22 +72,17 @@ export function Card() {
               />
             </CardHeader>
             <CardBody className="p-0 h-auto flex flex-col items-center justify-center"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
-              <Typography
-                color="black"
-                className="font-medium !text-black mt-0 mb-0"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}              >
+              <Typography color="black" className="font-medium !text-black mt-0 mb-0"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                 {item.title}
               </Typography>
-              <Typography
-                color="blue-gray"
-                className="font-medium mt-0"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}              >
+              <Typography color="blue-gray" className="font-medium mt-0"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
                 {item.price}
               </Typography>
             </CardBody>
             <CardFooter className="p-0 pt-0 flex justify-center relative bottom-4"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
               <Button
                 className="w-40 h-12 bg-secondary shadow-none hover:scale-105"
-                onClick={() => handleAddToCart(item)} // Pass item to the handler
-                 placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}              >
+                onClick={() => handleAddToCart(item)}  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}              >
                 Add to Cart
               </Button>
             </CardFooter>
