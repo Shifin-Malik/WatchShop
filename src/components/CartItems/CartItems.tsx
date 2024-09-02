@@ -1,4 +1,4 @@
-import { FaArrowLeft, FaShoppingCart } from "react-icons/fa";
+import { FaArrowLeft } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { Button } from "@material-tailwind/react";
