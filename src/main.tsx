@@ -13,6 +13,7 @@ import "./index.css";
 import { theme } from "./theme.ts";
 import {  ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { CartProvider } from "./store/CartContext.tsx";
 
 
 const queryClient = new QueryClient();
@@ -31,8 +32,9 @@ createRoot(document.getElementById("root")!).render(
         persistOptions={{ persister }}
       >
         <Provider store={store}>
+        <CartProvider>
           <ThemeProvider value={theme}>{(<App />) as never} <ToastContainer/> </ThemeProvider>
-
+          </CartProvider>
           <ReactQueryDevtools buttonPosition="top-right" />
         </Provider>
       </PersistQueryClientProvider>

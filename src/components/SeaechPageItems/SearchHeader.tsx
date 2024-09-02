@@ -1,6 +1,6 @@
 
 
-import { FiShoppingCart } from "react-icons/fi";
+import { FaShoppingCart } from "react-icons/fa";
 import { FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { Input } from "@material-tailwind/react";
@@ -13,15 +13,14 @@ function SearchHeader() {
       <Link to="/">
         <FaBars className="w-8 h-8 text-secondary" />
       </Link>
-
       <div className="relative">
-        <div className="bg-gray-800 p-2 rounded-lg">
-          <FiShoppingCart className="text-yellow-500 w-6 h-6" />
+          <Link to="/cart">
+            <FaShoppingCart className="text-black w-8 h-8" />
+          </Link>
+          <span className="absolute -top-2 -right-2 w-5 h-5 text-sm font-bold text-center text-white bg-red-600 rounded-full">
+            2
+          </span>
         </div>
-        <span className="absolute top-0 right-0 w-4 h-4 font-bold text-white bg-red-600 rounded-full">
-          2
-        </span>
-      </div>
     </div>
 
     <div className="md:w-[1330px] w-[350px] ml-5 mt-1 flex gap-4">

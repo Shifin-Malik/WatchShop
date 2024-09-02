@@ -1,20 +1,31 @@
-import { FaArrowLeft } from "react-icons/fa";
-import { MdDelete } from "react-icons/md";
-import { Link } from "react-router-dom";
-import Watch2 from '../../../public/images/watch2.png';
-import { Button } from "@material-tailwind/react";
-
-const cardData = [
-  { imgSrc: Watch2, title: 'Nike Air Max 200', price: '$240.00', quantity: 1 },
-  { imgSrc: Watch2, title: 'Excee Sneakers', price: '$260.00', quantity: 1 },
-  { imgSrc: Watch2, title: 'Air Max Motion 2', price: '$290.00', quantity: 1 },
-  { imgSrc: Watch2, title: 'Nike Air Max 200', price: '$240.00', quantity: 1 },
-  { imgSrc: Watch2, title: 'Excee Sneakers', price: '$260.00', quantity: 1 },
-  { imgSrc: Watch2, title: 'Air Max Motion 2', price: '$290.00', quantity: 1 },
-  // Add more items as needed
-];
+import React from 'react';
+import { FaArrowLeft } from 'react-icons/fa';
+import { MdDelete } from 'react-icons/md';
+import { Link } from 'react-router-dom';
+import { Button } from "@material-tailwind/react"; // Ensure this is imported
+import { useCart } from '../../store/CartContext';
 
 function CartItems() {
+  const { cartItems, removeFromCart, updateQuantity } = useCart();
+
+  const handleRemoveFromCart = (item) => {
+    removeFromCart(item);
+  };
+
+  const handleIncreaseQuantity = (item) => {
+    updateQuantity(item, item.quantity + 1);
+  };
+
+  const handleDecreaseQuantity = (item) => {
+    if (item.quantity > 1) {
+      updateQuantity(item, item.quantity - 1);
+    } else {
+      handleRemoveFromCart(item); // Remove item if quantity is 1 and decrease is pressed
+    }
+  };
+
+  const totalAmount = cartItems.reduce((total, item) => total + parseFloat(item.price.slice(1)) * item.quantity, 0);
+
   return (
     <div className="flex flex-col min-h-screen bg-primary">
       {/* Header */}
@@ -29,7 +40,7 @@ function CartItems() {
       {/* Cart Items */}
       <div className="flex-1 overflow-y-auto mt-16 mb-20">
         <div className="flex flex-col w-[44vh] max-w-md mx-auto mt-3 space-y-2">
-          {cardData.map((item, index) => (
+          {cartItems.map((item, index) => (
             <div
               key={index}
               className="flex items-center justify-between bg-white p-4 rounded-lg shadow-sm"
@@ -44,16 +55,28 @@ function CartItems() {
                 <p className="text-sm text-gray-500">{item.price}</p>
               </div>
               <div className="flex flex-col items-center">
-                <button className="w-6 h-6 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center">
+                <Button
+                  className="w-6 h-6 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center"
+                  onClick={() => handleIncreaseQuantity(item)}
+                >
                   +
-                </button>
+                </Button>
                 <span className="my-2 text-sm font-medium text-gray-800">
                   {item.quantity}
                 </span>
-                <button className="w-6 h-6 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center">
+                <Button
+                  className="w-6 h-6 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center"
+                  onClick={() => handleDecreaseQuantity(item)}
+                >
                   -
-                </button>
+                </Button>
               </div>
+              <Button
+                className="text-secondary hover:bg-red-100 rounded-full p-1"
+                onClick={() => handleRemoveFromCart(item)}
+              >
+                <MdDelete className="w-5 h-5" />
+              </Button>
             </div>
           ))}
         </div>
@@ -61,17 +84,8 @@ function CartItems() {
 
       {/* Summary */}
       <div className="fixed bottom-0 left-0 right-0 z-10 bg-secondary shadow-md w-full h-[13vh] flex items-center justify-between px-8 rounded-t-3xl">
-        {/* Subtotal and Taxes */}
-           
-          
-          <div className="text-3xl font-bold mt-2 text-white">$1290.00</div>
-     
-
-        {/* Checkout Button */}
+        <div className="text-3xl font-bold mt-2 text-white">${totalAmount.toFixed(2)}</div>
         <Button
-          placeholder={undefined}
-          onPointerEnterCapture={undefined}
-          onPointerLeaveCapture={undefined}
           className="text-white bg-indigo-600 h-12 font-bold w-40 flex items-center justify-center rounded-full shadow-lg hover:bg-indigo-500 transition"
         >
           Check Out
