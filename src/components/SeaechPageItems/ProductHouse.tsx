@@ -1,9 +1,9 @@
 import { Card as MaterialCard, CardHeader } from "@material-tailwind/react";
-import Apple from "../../../public/images/apple.png";
-import Rolex from "../../../public/images/rolex.png";
-import Titian from "../../../public/images/Titian.png";
-import Fastrack from "../../../public/images/fst.png";
-import Hublot from "../../../public/images/hublot.png";
+import Apple from "/images/apple.png";
+import Rolex from "/images/rolex.png";
+import Titian from "/images/Titian.png";
+import Fastrack from "/images/fst.png";
+import Hublot from "/images/hublot.png";
 
 function ProductHouse() {
   const cardData = [

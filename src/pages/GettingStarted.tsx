@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Watch2 from '../../public/images/watch2.png'
+import Watch2 from '/images/watch2.png'
 function GettingStarted() {
   
   return (

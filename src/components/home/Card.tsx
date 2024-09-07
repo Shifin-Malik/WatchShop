@@ -1,3 +1,4 @@
+
 import {
   Card as MaterialCard,
   CardHeader,
@@ -11,6 +12,8 @@ import Watch1 from "/images/watch1.png";
 import Watch2 from "/images/watch2.png";
 import Watch3 from "/images/watch3.png";
 import Watch4 from "/images/watch4.png";
+import Yacht from "/images/Yacht-Master.png"
+import Dweller from "/images/Sea-Dweller.png"
 import { useCart } from "../../store/CartContext";
 import { toast } from "react-toastify";
 
@@ -32,10 +35,14 @@ interface CartItem {
 
 // Sample data array
 const cardData: CardItem[] = [
-  { imgSrc: Watch1, title: "Rolexxxx", price: "$400.00" },
+  { imgSrc: Yacht, title: "Yacht-Master", price: "$200.00" },
+  { imgSrc: Dweller, title: "Sea-Dweller", price: "$200.00" },  
   { imgSrc: Watch2, title: "Rolex", price: "$300.00" },
+  { imgSrc: Watch1, title: "Rolexxxx", price: "$400.00" },
   { imgSrc: Watch3, title: "Rolexxxxxxxxx", price: "$500.00" },
   { imgSrc: Watch4, title: "Rolexx", price: "$200.00" },
+ 
+
 ];
 
 export function Card() {
