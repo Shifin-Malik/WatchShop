@@ -1,3 +1,4 @@
+// src/index.tsx
 import React from "react";
 import { createRoot } from "react-dom/client";
 import { ThemeProvider } from "@material-tailwind/react";
@@ -11,10 +12,10 @@ import { Provider } from "jotai";
 import { store } from "./states/storage.ts";
 import "./index.css";
 import { theme } from "./theme.ts";
-import {  ToastContainer } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { CartProvider } from "./store/CartContext.tsx";
-
+import { WatchlistProvider } from "./store/WatchlistContext.tsx"; // Import WatchlistProvider
 
 const queryClient = new QueryClient();
 
@@ -24,20 +25,25 @@ const persister = createSyncStoragePersister({
 
 createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-
     <BrowserRouter basename="/WatchShop/">
-
       <PersistQueryClientProvider
         client={queryClient}
         persistOptions={{ persister }}
       >
         <Provider store={store}>
-        <CartProvider>
-          <ThemeProvider value={theme}>{(<App />) as never} <ToastContainer/> </ThemeProvider>
+          <CartProvider>
+            <WatchlistProvider>
+              {" "}
+              {/* Wrap with WatchlistProvider */}
+              <ThemeProvider value={theme}>
+                <App />
+                <ToastContainer />
+              </ThemeProvider>
+            </WatchlistProvider>
           </CartProvider>
           <ReactQueryDevtools buttonPosition="top-right" />
         </Provider>
       </PersistQueryClientProvider>
     </BrowserRouter>
-  </React.StrictMode>  
+  </React.StrictMode>
 );

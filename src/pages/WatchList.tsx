@@ -1,10 +1,11 @@
+import WatchListItems from "../components/watchListPage/WatchListItems";
 
 function WatchList() {
   return (
     <div>
-      hi
+      <WatchListItems />
     </div>
-  )
+  );
 }
 
-export default WatchList
+export default WatchList;

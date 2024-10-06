@@ -23,8 +23,6 @@ const inputData = [
     icon: FaPersonCirclePlus,
     label: "Invite a Friend",
   },
-  
-  
 ];
 
 function AccountDetails() {
@@ -39,21 +37,39 @@ function AccountDetails() {
       <div className="bg-primary mt-0">
         <Card
           shadow={false}
-          className="bg-primary relative grid h-28 w-full items-start justify-center overflow-hidden text-center"   placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}        >
-          <CardBody className="relative px-6 md:px-12"   placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+          className="bg-primary relative grid h-28 w-full items-start justify-center overflow-hidden text-center"
+          placeholder={undefined}
+          onPointerEnterCapture={undefined}
+          onPointerLeaveCapture={undefined}
+        >
+          <CardBody
+            className="relative px-6 md:px-12"
+            placeholder={undefined}
+            onPointerEnterCapture={undefined}
+            onPointerLeaveCapture={undefined}
+          >
             <Avatar
               size="sm"
               variant="circular"
               alt="tania andrew"
               className="border-2 bg-black w-28 h-28 rounded-full object-cover mt-0"
-              src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80" placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}            />
+              src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80"
+              placeholder={undefined}
+              onPointerEnterCapture={undefined}
+              onPointerLeaveCapture={undefined}
+            />
           </CardBody>
         </Card>
 
         <div className="flex flex-col bg-primary h-screen w-full items-center mt-[-3rem]">
-          <h2 className="font-bold text-black mb-0">Shifin Malik</h2>
-          <p className="text-gray-700 mb-2">Shifinmalik@gmail.com</p>
-          <Button className="bg-yellow-400 w-44 text-center rounded-3xl h-10 py-1"   placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}>
+          <h2 className="font-bold text-black mb-0">Jack</h2>
+          <p className="text-gray-700 mb-2">Jack@gmail.com</p>
+          <Button
+            className="bg-yellow-400 w-44 text-center rounded-3xl h-10 py-1"
+            placeholder={undefined}
+            onPointerEnterCapture={undefined}
+            onPointerLeaveCapture={undefined}
+          >
             Upgrade to PRO
           </Button>
 
@@ -62,7 +78,11 @@ function AccountDetails() {
               <Button
                 key={i}
                 variant="filled"
-                className="!h-14 pl-6 bg-white rounded-full border border-gray-300 text-gray-900 shadow-lg ring-4 ring-transparent flex items-center justify-between !focus:border-gray-900 !focus:ring-gray-900/10"   placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}              >
+                className="!h-14 pl-6 bg-white rounded-full border border-gray-300 text-gray-900 shadow-lg ring-4 ring-transparent flex items-center justify-between !focus:border-gray-900 !focus:ring-gray-900/10"
+                placeholder={undefined}
+                onPointerEnterCapture={undefined}
+                onPointerLeaveCapture={undefined}
+              >
                 <Icon className="text-gray-500 w-6 h-6" />
                 <span className="flex-1 text-left ml-4">{label}</span>
                 <IoIosArrowForward className="text-gray-500 w-6 h-6" />
@@ -72,8 +92,11 @@ function AccountDetails() {
           <div className="md:w-[1330px] w-80 mt-3 flex flex-col gap-3">
             <Button
               variant="filled"
-              className="!h-14 pl-6 bg-white rounded-full border border-gray-300 text-gray-900 shadow-lg ring-4 ring-transparent flex items-center justify-between !focus:border-gray-900 !focus:ring-gray-900/10" 
-              placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}            >
+              className="!h-14 pl-6 bg-white rounded-full border border-gray-300 text-gray-900 shadow-lg ring-4 ring-transparent flex items-center justify-between !focus:border-gray-900 !focus:ring-gray-900/10"
+              placeholder={undefined}
+              onPointerEnterCapture={undefined}
+              onPointerLeaveCapture={undefined}
+            >
               <AiOutlineLogout className="text-gray-500 w-6 h-6" />
               <span className="flex-1 text-left ml-4">Logout</span>
             </Button>

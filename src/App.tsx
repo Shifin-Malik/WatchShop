@@ -15,7 +15,6 @@ function App() {
 
   return (
     <Routes>
-       
       <Route element={<Layout />} path="/">
         <Route
           index
@@ -25,7 +24,6 @@ function App() {
         <Route path="search" element={<SearchPage />} />
         <Route path="watchlist" element={<WatchList />} />
         <Route path="profile" element={<Profile />} />
-       
 
         <Route path="getting-started" element={<GettingStarted />} />
         <Route
