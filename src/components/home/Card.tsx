@@ -67,6 +67,9 @@ export function Card() {
             key={index}
             shadow={false}
             className="w-48 flex-shrink-0 bg-primary h-64 rounded-md relative" // Added 'relative' for positioning
+            placeholder={undefined}
+            onPointerEnterCapture={undefined}
+            onPointerLeaveCapture={undefined}
           >
             <FaHeart
               className={`absolute top-2 right-2 cursor-pointer ${
@@ -77,28 +80,57 @@ export function Card() {
               size={20}
               onClick={() => handleAddToWatchlist(item)} // Handle watchlist addition
             />
-            <CardHeader shadow={false} floated={false} className="h-32 mt-6">
+            <CardHeader
+              shadow={false}
+              floated={false}
+              className="h-32 mt-6"
+              placeholder={undefined}
+              onPointerEnterCapture={undefined}
+              onPointerLeaveCapture={undefined}
+            >
               <img
                 src={item.imgSrc}
                 alt={item.title}
                 className="h-full w-full object-cover bg-primary mt-0 mb-0"
               />
             </CardHeader>
-            <CardBody className="p-0 h-auto flex flex-col items-center justify-center">
+            <CardBody
+              className="p-0 h-auto flex flex-col items-center justify-center"
+              placeholder={undefined}
+              onPointerEnterCapture={undefined}
+              onPointerLeaveCapture={undefined}
+            >
               <Typography
                 color="black"
                 className="font-medium !text-black mt-0 mb-0"
+                placeholder={undefined}
+                onPointerEnterCapture={undefined}
+                onPointerLeaveCapture={undefined}
               >
                 {item.title}
               </Typography>
-              <Typography color="blue-gray" className="font-medium mt-0">
+              <Typography
+                color="blue-gray"
+                className="font-medium mt-0"
+                placeholder={undefined}
+                onPointerEnterCapture={undefined}
+                onPointerLeaveCapture={undefined}
+              >
                 {item.price}
               </Typography>
             </CardBody>
-            <CardFooter className="p-0 pt-0 flex justify-center relative bottom-4">
+            <CardFooter
+              className="p-0 pt-0 flex justify-center relative bottom-4"
+              placeholder={undefined}
+              onPointerEnterCapture={undefined}
+              onPointerLeaveCapture={undefined}
+            >
               <Button
                 className="w-40 h-12 bg-secondary shadow-none hover:scale-105"
                 onClick={() => handleAddToCart(item)}
+                placeholder={undefined}
+                onPointerEnterCapture={undefined}
+                onPointerLeaveCapture={undefined}
               >
                 Add to Cart
               </Button>

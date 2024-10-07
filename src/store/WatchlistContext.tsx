@@ -1,5 +1,5 @@
 // src/store/WatchlistContext.tsx
-import React, { createContext, useState, useContext, ReactNode } from "react";
+import { createContext, useState, useContext, ReactNode } from "react";
 
 // Define the type for card data
 export interface CardItem {
