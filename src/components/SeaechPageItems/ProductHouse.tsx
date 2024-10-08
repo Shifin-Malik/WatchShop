@@ -7,16 +7,11 @@ import Hublot from "/images/hublot.png";
 
 function ProductHouse() {
   const cardData = [
-    { imgSrc: Fastrack, title: "Rolex", price: "$100.00" },
-    { imgSrc: Fastrack, title: "Rolex", price: "$100.00" },
     { imgSrc: Apple, title: "Rolex", price: "$100.00" },
     { imgSrc: Fastrack, title: "Rolex", price: "$100.00" },
-    { imgSrc: Apple, title: "Rolex", price: "$100.00" },
     { imgSrc: Rolex, title: "Rolex", price: "$100.00" },
     { imgSrc: Titian, title: "Rolex", price: "$100.00" },
     { imgSrc: Hublot, title: "Rolex", price: "$100.00" },
-    { imgSrc: Rolex, title: "Rolex", price: "$100.00" },
-    { imgSrc: Apple, title: "Rolex", price: "$100.00" },
   ];
 
   return (
@@ -26,11 +21,19 @@ function ProductHouse() {
           <MaterialCard
             key={index}
             shadow={false}
-            className="w-20 md:w-32 flex-shrink-0 bg-primary border border-gray-300 shadow-lg ring-4 ring-transparent rounded-lg"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}          >
+            className="w-20 md:w-32 flex-shrink-0 bg-primary border border-gray-300 shadow-lg ring-4 ring-transparent rounded-lg"
+            placeholder={undefined}
+            onPointerEnterCapture={undefined}
+            onPointerLeaveCapture={undefined}
+          >
             <CardHeader
               shadow={false}
               floated={false}
-              className="h-24 md:h-36 mx-0 overflow-hidden rounded-lg"  placeholder={undefined} onPointerEnterCapture={undefined} onPointerLeaveCapture={undefined}            >
+              className="h-24 md:h-36 mx-0 overflow-hidden rounded-lg"
+              placeholder={undefined}
+              onPointerEnterCapture={undefined}
+              onPointerLeaveCapture={undefined}
+            >
               <img
                 src={item.imgSrc}
                 alt={item.title}
